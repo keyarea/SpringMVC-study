@@ -30,5 +30,17 @@
 <p>测试params属性</p>
 <a href="haha/handle03">handle03-测试params</a>
 
+<hr>
+<p>测试headers属性</p>
+<a href="haha/handle04">handle04-测试headers</a>
+
+<hr>
+
+<h3>RequestMapping- Ant风格的url</h3>
+<a href="antTest01">antTest01- 精确的地址</a>
+
+<hr>
+<h3>测试PathVariable</h3>
+<a href="user/hello">TestPathVariable</a>
 </body>
 </html>
