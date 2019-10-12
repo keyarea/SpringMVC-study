@@ -14,8 +14,27 @@
 
 <a href="hello">hello</a>
 <hr>
+<p>查看url中携带的参数信息</p>
 <a href="handle02?username=tomcat">handle02</a>
 <hr>
+<p>查看Headers信息中的User-Agent</p>
 <a href="handle03">handle03</a>
+<hr>
+<p>查看cookie的值</p>
+<a href="handle04">handle04</a>
+<hr>
+
+<form action="book" method="post">
+    书名：<input type="text" name="bookName"> <br>
+    作者：<input type="text" name="author"> <br>
+    价格：<input type="text" name="price"> <br>
+    库存： <input type="text" name="stock"><br>
+    销量: <input type="text" name="sales"><br>
+    <hr>
+    省：<input type="text" name="address.province">
+    市：<input type="text" name="address.city">
+    街道： <input type="text" name="address.street">
+    <input type="submit" value="添加">
+</form>
 </body>
 </html>

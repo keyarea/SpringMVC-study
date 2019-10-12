@@ -1,6 +1,8 @@
 package net.qipo.Controller;
 
+import net.qipo.Bean.Book;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +44,9 @@ public class HelloController {
      *              c.getValue();
      *          }
      *      }
+     *      value:
+     *      required:
+     *      defaultValue:
      */
     @RequestMapping("handle02")
     public String handle02(@RequestParam("username")String username) {
@@ -60,8 +65,24 @@ public class HelloController {
         return "success";
     }
 
-    public String handle04() {
-        System.out.println("handle04...");
+    @RequestMapping("handle04")
+    public String handle04(@CookieValue("JSESSIONID")String cookie) {
+        System.out.println("handle04...cookie为" + cookie);
+        return "success";
+    }
+
+    /**
+     * 如果我们的请求参数是一个POJO
+     * Spring会自动的为这个POJO进行赋值？
+     * 1、将POJO中的每一个属性，从request参数中获取出来，并封装即可；
+     * 2、还可以级联封装, 级联属性：属性的属性
+     *
+     * @param book
+     * @return
+     */
+    @RequestMapping("/book")
+    public String addBook(Book book) {
+        System.out.println("addBook...book:" + book);
         return "success";
     }
 }
