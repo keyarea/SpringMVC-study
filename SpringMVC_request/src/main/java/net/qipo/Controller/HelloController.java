@@ -7,6 +7,15 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 @Controller
 public class HelloController {
 
@@ -83,6 +92,31 @@ public class HelloController {
     @RequestMapping("/book")
     public String addBook(Book book) {
         System.out.println("addBook...book:" + book);
+        return "success";
+    }
+
+    /**
+     * SpringMVC可以直接在参数上写原生API
+     * HttpServletRequest
+     * HttpServletResponse
+     * HttpSession
+     *
+     * java.security.Principal
+     * Locale: 国际化有关的区域信息对象
+     * InputStream
+     *       ServletInputStream inputStream = request.getInputStream();
+     * OutputStream
+     *      ServletOutputStream outputStream = response.getOutputStream();
+     * Reader:
+     *      BufferedReader reader = request.getReader();
+     * Writer:
+     *      PrintWriter writer = response.getWriter();
+     *
+     */
+    @RequestMapping("handle05")
+    public String handle05(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        request.setAttribute("reqParam", "我是请求域中的");
+        session.setAttribute("sessionParam", "我是session域中的");
         return "success";
     }
 }

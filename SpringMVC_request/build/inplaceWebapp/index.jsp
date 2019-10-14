@@ -36,5 +36,9 @@
     街道： <input type="text" name="address.street">
     <input type="submit" value="添加">
 </form>
+
+<hr>
+<p>使用原生api</p>
+<a href="handle05">handle05</a>
 </body>
 </html>
