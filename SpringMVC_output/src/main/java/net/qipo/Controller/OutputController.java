@@ -29,7 +29,7 @@ import java.util.Map;
  * 后来推荐SessionAttributes就别用了,可能会发生异常;
  * 给session中放数据请使用原生api;
  */
-@SessionAttributes(value = {"msg", "hahaha"}, types = {String.class})
+//@SessionAttributes(value = {"msg", "hahaha"}, types = {String.class})
 @Controller
 public class OutputController {
 

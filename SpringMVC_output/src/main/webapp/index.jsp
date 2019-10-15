@@ -24,5 +24,15 @@
 <a href="handle04">handle04</a>
 <br>
 <a href="handle05">handle05</a>
+<hr>
+<form action="updateBook" method="post">
+    <input type="hidden" value="7" name="id"> <br>
+    图书： 西游记 <br>
+    作者： <input type="text" name="author" ><br>
+    价格：<input type="text" name="price" ><br>
+    库存：<input type="text" name="stock" ><br>
+    销量：<input type="text" name="sales" ><br>
+    <input type="submit" value="修改图书">
+</form>
 </body>
 </html>
