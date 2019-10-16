@@ -12,5 +12,13 @@
   </head>
   <body>
   <a href="hello">hello</a>
+  <br>
+  <a href="handle01">handle=hello页面</a>
+  <br>
+  <a href="handle02">handle02=hello</a>
+  <br>
+  <a href="handle03">重定向至hello.jsp</a>
+  <br>
+  <a href="handle04">多次重定向</a>
   </body>
 </html>
