@@ -56,12 +56,29 @@ public class ModelAttributesTestController {
      *      方法位置：这个方法就会提前于目标方法运行；
      *          我们可以提前查出这个数据库中的图书的信息
      *          将这个图书信息保存起来，方便下一个方法还能使用
+     *
+     * @ModelAttribute 标注的方法会提前运行并把运行结果放在隐含模型中；(返回值)
+     * 	放的时候会使用一个key
+     * 		如果@ModelAttribute("book")指定了，就用指定的book；
+     *      如果没指定就用返回值类型的首字母小写作为可以；
+     */
+//    @ModelAttribute
+//    public void MyModelAttribute(ModelMap modelMap) {
+//        Book book = new Book(100, "西游记", "王五", 12, 12, 19.98);
+//        System.out.println("数据库中查到的数据信息: " + book);
+//        modelMap.addAttribute("book",book);
+//        System.out.println("ModelAttribute查询了图书并保存起来了, modelMap是:" + modelMap.getClass());
+//    }
+
+
+    /**
+     * 一般使用将对象保存在ModelMap中，而不是作为一个返回值
+     * @return
      */
     @ModelAttribute
-    public void MyModelAttribute(ModelMap modelMap) {
+    public Book MyModelAttribute() {
         Book book = new Book(100, "西游记", "王五", 12, 12, 19.98);
         System.out.println("数据库中查到的数据信息: " + book);
-        modelMap.addAttribute("book",book);
-        System.out.println("ModelAttribute查询了图书并保存起来了, modelMap是:" + modelMap.getClass());
+        return book;
     }
 }
