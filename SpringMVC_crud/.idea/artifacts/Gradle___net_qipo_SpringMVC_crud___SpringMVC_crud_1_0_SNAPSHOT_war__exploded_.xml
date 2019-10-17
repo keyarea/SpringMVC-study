@@ -1,0 +1,33 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : net.qipo.SpringMVC_crud : SpringMVC_crud-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/SpringMVC_crud-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/SpringMVC_crud-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SpringMVC_crud.main/web/Web Gradle : SpringMVC_crud-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringMVC_crud.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.1.9.RELEASE/b9d4a2140488f0e6f9aa231e7938ae18da77b637/spring-webmvc-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.9.RELEASE/c37f8fe15a5ae4ea1f351bd46167fd492a84eefa/spring-context-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.9.RELEASE/bc2312ffad02251b9d472e4a7c0e472a58f50fbf/spring-aop-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.9.RELEASE/9fe4390420fdd0b63dc4ed90d9027dafa9f74f80/spring-web-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.9.RELEASE/5a03b3983108d73978aec2fa3e681aedad6782c/spring-beans-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.1.9.RELEASE/db3a2468c1b7d697ec3b3ec6e5652dc282994fe3/spring-expression-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.9.RELEASE/dc3815439579b4fa0c19970e6b8e5d774af8d988/spring-core-5.1.9.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.1.9.RELEASE/7c372790c999777d20f364960cf557dd74f890cf/spring-jcl-5.1.9.RELEASE.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -20,5 +20,7 @@
   <a href="handle03">重定向至hello.jsp</a>
   <br>
   <a href="handle04">多次重定向</a>
+  <hr>
+  <a href="handleplus">下载资源</a>
   </body>
 </html>
