@@ -14,7 +14,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SpringMVC_crud.main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
@@ -25,9 +25,9 @@
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.1.9.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.1.9.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Gradle: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.1.9.RELEASE" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
         </element>
       </element>
     </root>

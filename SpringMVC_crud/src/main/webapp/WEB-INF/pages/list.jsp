@@ -36,7 +36,13 @@
             <td>
                 <a href="${ctp}/emp/${emp.id}">edit</a>
             </td>
-            <td>DELETE</td>
+            <td>
+<%--                <a href="${ctp}/emp/${emp.id}"></a>--%>
+                <form action="${ctp}/emp/${emp.id}" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="删除">
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

@@ -66,6 +66,13 @@ public class EmployeeController {
         return "redirect:/emps";
     }
 
+    @RequestMapping(value = "/emp/{id}", method = RequestMethod.DELETE)
+    public String deleteEmp(@PathVariable("id")Integer id) {
+        System.out.println("要删除的用户id" + id);
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+
     @ModelAttribute
     public void myModelAttribute(@RequestParam(value = "id", required = false)Integer id, ModelMap modelMap) {
         if(id != null) {
