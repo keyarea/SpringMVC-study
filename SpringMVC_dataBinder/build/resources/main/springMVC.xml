@@ -30,4 +30,8 @@
         </property>
     </bean>
 
+    <!-- 管理国际化资源文件 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="errors"/>
+    </bean>
 </beans>

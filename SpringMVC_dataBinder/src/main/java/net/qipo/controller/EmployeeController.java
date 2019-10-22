@@ -7,10 +7,15 @@ import net.qipo.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import javax.jws.WebParam;
+import javax.validation.Valid;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class EmployeeController {
@@ -43,11 +48,29 @@ public class EmployeeController {
 
 
     @RequestMapping(value = "/emp",method = RequestMethod.POST)
-    public String addEmp(Employee employee) {
+    public String addEmp(@Valid Employee employee, BindingResult bindingResult, ModelMap modelMap) {
         System.out.println("要添加的员工:" + employee);
-        employeeDao.save(employee);
-        // 返回列表页面
-        return "redirect:/emps";
+        // 获取是否有校验错误
+        boolean b = bindingResult.hasErrors();
+
+        if (b) {
+            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
+            Map<String, Object> errorsMap = new HashMap<>();
+            for (FieldError fieldError : fieldErrors) {
+                System.out.println("错误消息:" + fieldError.getDefaultMessage());
+                System.out.println("错误的字段:" + fieldError.getField());
+                System.out.println(fieldError);
+                System.out.println("________________");
+                errorsMap.put(fieldError.getField(), fieldError.getDefaultMessage());
+            }
+            modelMap.addAttribute("errorInfo", errorsMap);
+            System.out.println("有校验错误");
+            return "add";
+        }else{
+            employeeDao.save(employee);
+            // 返回列表页面
+            return "redirect:/emps";
+        }
     }
 
     @RequestMapping(value = "/emp/{id}", method = RequestMethod.GET)

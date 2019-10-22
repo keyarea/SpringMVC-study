@@ -17,7 +17,7 @@ repositories {
 }
 
 gretty {
-    httpPort = 8081
+    httpPort = 8080
     contextPath = '/MyWebApp'
     servletContainer = 'tomcat8'
     scanInterval = 1
@@ -45,4 +45,18 @@ dependencies {
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     // https://mvnrepository.com/artifact/taglibs/standard
     compile group: 'taglibs', name: 'standard', version: '1.1.2'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.17.Final'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations
+    compile group: 'org.hibernate', name: 'hibernate-annotations', version: '3.4.0.GA'
+    // https://mvnrepository.com/artifact/com.fasterxml/classmate
+    compile group: 'com.fasterxml', name: 'classmate', version: '1.5.0'
+    // https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging
+    compile group: 'org.jboss.logging', name: 'jboss-logging', version: '3.4.1.Final'
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+
 }

@@ -38,11 +38,18 @@
                 这个对象就是请求域中的command;
       --%>
 
-    lastName:<form:input path="lastName"/> <br>
-    email:<form:input path="email"/> <br>
+    lastName:<form:input path="lastName"/>
+    <br>
+        <form:errors path="lastName"/>--> ${errorInfo.lastName}
+    <br>
+    email:<form:input path="email"/>
+    <br>
+        <form:errors path="email"/>--> ${errorInfo.email}
+    <br>
     gender: <br>
         男:<form:radiobutton path="gender" value="1"/> <br>
         女:<form:radiobutton path="gender" value="0"/> <br>
+    <br>
     部门:
         <%--  items="" :指定要遍历的集合;自动遍历;遍历出的每一个元素是一个department对象
               itemLabel="属性" : 指定遍历出的这个对象哪个属性是作为option标签体的值
@@ -50,6 +57,7 @@
          --%>
     <form:select path="department.id" items="${departments}" itemLabel="departmentName" itemValue="id" >
     </form:select>
+
     <input type="submit" value="添加员工">
 </form:form>
 

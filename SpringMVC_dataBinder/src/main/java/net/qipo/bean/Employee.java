@@ -1,14 +1,32 @@
 package net.qipo.bean;
 
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Component;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import java.util.Date;
 
 public class Employee {
     private Integer id;
+    @NotEmpty(message = "不能为空")
+    @Length(min = 6,max = 18)
     private String lastName;
+
+    @Email
     private String email;
 //    1 male, 0 female
     private Integer gender;
     private Department department;
+
+    // 规定页面提交的日期格式@Past,必须是一个过去的时间 @Future,必须是一个未来的时间
+    @Past
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birth;
 
     @Override
     public String toString() {

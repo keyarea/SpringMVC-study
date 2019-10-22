@@ -48,7 +48,7 @@
 </table>
 
 <a href="${ctp}/toaddpage">添加员工</a>
-<form action="${ctp}/quickadd">
+<form action="${ctp}/quickadd" method="post">
    <!-- 将员工的所有的信息都写上，自动封装对象 -->
     <input name="empinfo" value="empAdmin-admin@qq.com-1-101">
     <input type="submit" value="快速添加">
