@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!--    <import resource="spring.xml"/>-->
+
+    <aop:component-scan base-package="net.qipo" use-default-filters="false">
+        <aop:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </aop:component-scan>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--
+      默认前端控制器是拦截所有资源(除了jsp),js文件就404了;js是交给tomcat处理的
+     -->
+    <!-- 告诉SpringMVC,自己映射的请求就自己处理,没有映射的请求就直接交给tomcat -->
+    <!-- 静态资源能够访问,动态映射的就不可以 -->
+    <mvc:default-servlet-handler/>
+    <!-- SpringMVC可以保证动态请求和静态请求都能够访问 -->
+    <!-- 使用自己配置的类型转换组件 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <!-- 配置一个错误处理器 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <!-- 配置哪些哪些异常去哪些页面  -->
+        <property name="exceptionMappings">
+            <props>
+                <!-- key: 异常全类名 ; value: 要去的页面视图名-->
+                <prop key="java.lang.NullPointerException">
+                    myerror
+                </prop>
+            </props>
+        </property>
+        <!-- 指定错误信息取出时,使用的kception -->
+        <property name="exceptionAttribute" value="ex"></property>
+    </bean>
+</beans>
