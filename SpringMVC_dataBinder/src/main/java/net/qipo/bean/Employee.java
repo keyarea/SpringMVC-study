@@ -1,5 +1,7 @@
 package net.qipo.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
@@ -21,12 +23,18 @@ public class Employee {
     private String email;
 //    1 male, 0 female
     private Integer gender;
+
+    /**
+     * 返回json数据的时候会忽略该属性
+     */
+    @JsonIgnore
     private Department department;
 
     // 规定页面提交的日期格式@Past,必须是一个过去的时间 @Future,必须是一个未来的时间
     @Past
 //    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date birth;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date birth = new Date();
 
     @Override
     public String toString() {
